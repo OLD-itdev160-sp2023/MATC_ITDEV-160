@@ -1,0 +1,36 @@
+h1{
+    color: white;
+    text-align: center;
+
+}
+
+body {
+    background-color: black;
+    font-family: "Open Sans", sans-serif, monospace;
+    color: whitesmoke
+}
+
+img {
+    width: 250px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+caption{
+    font-size: .85em;
+    text-align: center;
+}
+
+p#product-description{
+    margin: 20px 0 20px 0;
+    text-align: center;
+}
+
+div.review{
+    padding: 10px;
+    background-color: #333333;
+    margin: 20px 0 20px 0;
+}
