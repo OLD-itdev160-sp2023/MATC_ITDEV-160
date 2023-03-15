@@ -3,30 +3,25 @@ console.log("This script is running");
 const loopSteps = 10;
 const loopStepMultiplier = 0.1;
 
+let resultElement;
+
 async function GetAdvice()
 {
     console.log("Button Clicked");
 
-    const resultElement = await document.getElementById('result');
+    resultElement = await document.getElementById('result');
     
     resultElement.textContent = "Getting your advice...";
 
-    let advice = ["", "", "", "", "", "", "", "", "", ""];
+    const response = await fetch("https://api.adviceslip.com/advice")
+        .then((response) => response.json())
+        .then((data) => data.slip)
+        .catch((error) => error);
 
-    for(let step = 0; step < loopSteps; step++)
-    {
-        advice[step] = await fetch("https://api.adviceslip.com/advice");
-    }
+        await SetContent(response.advice);
+}
 
-    for(let step = 0; step < loopSteps; step++)
-    {
-        
-        resultElement.textContent = advice[step].slip.advice;
-
-        /*
-        await setTimeout(() => {
-            console.log(`loop step ${step}`);
-            console.log(advice[step]);
-        }, step * loopStepMultiplier * 1000);*/
-    }
+async function SetContent(data)
+{
+    resultElement.textContent = data;
 }
