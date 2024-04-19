@@ -1,3 +1,2 @@
-# Nathan-Schmitt
-
-Wow look I edited a README!
+# MATC ITDEV-160
+This repository contains the code I wrote for my college class at MATC
